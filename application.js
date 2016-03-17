@@ -1,5 +1,7 @@
-$(document).ready(function(){
-	var teksti = $('<p> Miltä tuntui?</p>');
-		$(#tunnus).append(teksti);
-		$('button').remove();
+﻿$(document).ready(function(){
+	    var teksti = $('<p> Miltä tuntui?</p>');
+		$(".nappi").on("click",function(){
+		$("#tunnus").append(teksti);
+		$(".nappi").remove();
+		});
 });
