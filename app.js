@@ -48,7 +48,7 @@
         createdOn: 1397490980837
       }, {
         stars: 1,
-        body: "Great guitar!",
+        body: "Not so great guitar!",
         author: "tim@example.org",
         createdOn: 1397490980837
       }]
@@ -68,7 +68,7 @@
       ],
       reviews: [{
         stars: 3,
-        body: "Great guitar!",
+        body: "Intermediate guitar!",
         author: "JimmyDean@example.org",
         createdOn: 1397490980837
       }, {
@@ -93,18 +93,8 @@
       ],
       reviews: [{
         stars: 1,
-        body: "Great guitar!",
+        body: "Not so great guitar!",
         author: "turtleguyy@example.org",
-        createdOn: 1397490980837
-      }, {
-        stars: 1,
-        body: "Great guitar!",
-        author: "LouisW407@example.org",
-        createdOn: 1397490980837
-      }, {
-        stars: 1,
-        body: "Great guitar!",
-        author: "nat@example.org",
         createdOn: 1397490980837
       }]
     }];
