@@ -30,10 +30,11 @@
    var gems = [{
       name: 'Fender Stratocaster',
       description: "Stratocaster has usually single-coil microphones and has very unique sound",
-      shine: 8,
-      price: 110.50,
-      rarity: 7,
+      designer: 'Leo Fender',
+      neck: 'maple',
+      pickups: 'Usually 3 single coils',
       color: '#CCC',
+	  price: 1500,
       faces: 14,
       images: [
         "images/strato1.jpg",
@@ -54,10 +55,11 @@
     }, {
       name: 'Gibson Les Paul',
       description: "Les Paul has humbucker microphones and it is played by many rockstars like Slash.",
-      shine: 9,
-      price: 22.90,
-      rarity: 6,
+      designer: 'Ted McCarty',
+      neck: 'Usually mahogany',
+      pickups: 'Usually two humbuckers',
       color: '#EEE',
+	  price: 2000,
       faces: 12,
       images: [
         "images/lespaul1.jpg",
@@ -78,10 +80,11 @@
     }, {
       name: 'Fender Telecaster',
       description: "Telecaster has usually single-coil mics and its usually used in country music.",
-      shine: 70,
-      price: 1100,
-      rarity: 2,
+      designer: 'Leo Fender',
+      neck: 'maple',
+      pickups: 'Traditionally two single coils',
       color: '#000',
+	  price: 1000,
       faces: 6,
       images: [
         "images/telecaster1.jpg",
