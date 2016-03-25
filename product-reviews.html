@@ -5,7 +5,7 @@
     <blockquote>
       <strong>{{review.stars}} Stars</strong>
       {{review.body}}
-      <cite class="clearfix">—{{review.author}}</cite>
+      <cite class="clearfix">—{{review.author}} on {{review.createdOn | date}}</cite>
     </blockquote>
   </li>  
 </ul>
@@ -17,7 +17,7 @@
   <blockquote >
     <strong>{{reviewCtrl.review.stars}} Stars</strong>
     {{reviewCtrl.review.body}}
-    <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
+    <cite class="clearfix"> — {{reviewCtrl.review.author}}</cite>
   </blockquote>
 
   <!--  Review Form -->
