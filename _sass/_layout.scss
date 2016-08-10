@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 /**
  * Site header
  */
@@ -11,8 +12,11 @@
 }
 
 .site-title {
-    font-size: 26px;
-    font-weight: 300;
+    font:{
+		size: 30px;
+        weight: 400;
+		family:'Pacifico', cursive;
+	}
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;

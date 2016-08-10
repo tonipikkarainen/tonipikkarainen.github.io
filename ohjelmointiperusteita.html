@@ -1,0 +1,341 @@
+---
+layout: page
+title: Ohjelmoinnin perusteita
+permalink: /ohjelmointi/
+---
+  <h2>Sivulta löytyy:</h2>
+  <ul>
+    <li><a href="#muuttujat">Muuttujat</a></li>
+	<li><a href="#taulukot">Taulukot</a></li>
+	<li><a href="#silmukat">Silmukat</a></li>
+	<li><a href="#ifelse">If - else -rakenne</a></li>
+	<li><a href="#aliohjelmat">Aliohjelmat</a></li>
+  </ul>
+<div>
+<p> Tällä sivulla käydään läpi muutamia ohjelmointiin liittyviä peruskäsitteitä, jotka
+toivottavasti auttavat tehtävien tekemisessä. Pyrin päivittämään osiota tarpeen mukaan.
+</p>
+<h2 id="muuttujat">
+Muuttujat
+</h2>
+<p> 
+Muuttujien arvoa voidaan niiden nimen mukaisesti muuttaa ohjelman sisällä. Käytän
+tehtävissä suurimmaksi osin C#-ohjelmointikieltä, jossa muuttujalla on aina tietty tyyppi.
+Näitä tyyppejä ovat esimerkiksi:
+  <ul>
+     <li> int (kokonaisluku) </li>
+	 <li> double (reaaliluku) </li>
+	 <li> string (merkkijono) </li>
+	 <li> char (merkki) </li>
+  </ul>
+  Tietty muuttuja esitellään aina KERRAN, jolloin muuttujalle annetaan tyyppi ja nimi.
+  Arvo voidaan antaa, mutta se ei ole pakollista.
+  Esimerkki:
+  {% highlight c# linenos %}
+// Tämä on kommentti, ohjelman suorittamisessa
+//ei huomioida rivejä jotka alkavat "//"
+int a = 3;
+string lappari = "windows";
+char ekaKirjain;
+ekaKirjain = "t";
+
+{% endhighlight %}
+Eli tyyppi ensin ja sitten nimi. Kun muuttuja on jo esitelty ja siihen halutaan sijoittaa
+jokin arvo, tyyppiä ei enää kirjoiteta. (esim. ekaKirjain = "t"; tuossa yllä)
+</p>
+<h2 id="taulukot">
+Taulukot
+</h2>
+<p>
+Käsitellään tässä yksiulotteisia taulukoita. Taulukko on kokonaisuus, jossa on joukko
+tietyn tyyppistä sisältöä. Käytetään esimerkkinä kokonaislukutaulukkoa, joka voidaan
+alustaa seuraavasti:
+ {% highlight c# linenos %}
+int[] taulukko_a = new int[4]; /* Alustaa taulukon, jossa on 4 paikkaa
+                  kokonaisluvuille. Arvot sijoitetaan myöhemmin.
+			(kommentti voidaan merkitä myös näin)*/ 
+
+{% endhighlight %}
+Taulukko voidaan alustaa myös sijoittamalla arvot heti:
+ {% highlight c# linenos %}
+int[] taulukko_b = { 3, 4, 1, 100, 6 }; /* Nyt syntyy 5-paikkainen 
+             taulukko, jossa on arvot jo valmiiksi sijoitettuna.*/
+
+{% endhighlight %}
+<h3> Taulukon indeksointi </h3>
+Taulukon indeksointi aloitetaan ohjelmointikielissä yleensä nollasta. Eli ensimmäisen 
+alkion indeksi on nolla, toisen yksi jne...
+Esim.
+ {% highlight c# linenos %}
+        /* indeksit: 0  1  2    3  4*/
+int[] taulukko_b = { 3, 4, 1, 100, 6 }; 
+System.Console.WriteLine(taulukko_b[2]); /*tässä siis tulostetaan taulukon alkio
+jonka indeksi on 2*/
+{% endhighlight %}
+Ja tulostus olisi:
+{% highlight c#  %}
+1
+{% endhighlight %}
+
+</p>
+<h2 id="silmukat">
+Silmukat
+</h2>
+<p>
+  Silmukoiden idea yksinkertaistetusti on, että toistetaan tiettyä toimenpidettä useita kertoja.
+  Silmukkarakenteita on muutamia erilaisia, ja käydään tässä nyt pari niistä läpi.
+  <h3> for-silmukka </h3>
+  Tähänkin on helpointa tutustua esimerkin avulla (tässä myös esimerkki c#-pääohjelman
+  syntaksista):
+  {% highlight c# linenos %}
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		string[] nimet = {"Pekka", "Petra", "Kalle", "Kaisa"};
+
+		for (int i = 0; i < nimet.Length ; i++)
+                 {
+                    Console.WriteLine(nimet[i]);
+                 }
+	}
+}
+{% endhighlight %}
+<p>
+Tuossa koodissa sanan for jälkeen esitellään ensin indeksimuuttuja i, jonka alkuarvo
+on nolla. Sitten puolipisteen jälkeen kerrotaan miten kauan silmukkaa pyöritetään.
+Tässä niin kauan kuin i on pienempi kuin nimet-taulukon pituus, eli neljä. Viimeiseksi
+sanotaan mitä jokaisen silmukan kierroksen lopussa tehdään - tässä tapauksessa kasvatetaan
+muuttujaa i yhdellä (i++ tarkoittaa siis, että i kasvaa yhdellä).
+</p>
+<p>
+Muuttuja i käy siis kierroksilla läpi arvot 0, 1, 2 ja 3. Ensimmäisellä silmukan kierroksella
+tulostetaan siis nimet[0] eli Pekka, toisella nimet[1] eli Petra jne...
+Ja tulostus kokonaisuudessaan on:
+{% highlight c#  %}
+Pekka
+Petra
+Kalle
+Kaisa
+{% endhighlight %}
+</p>
+<h3> while-silmukka </h3>
+<p>
+while on idealtaan melko sama kuin for, mutta näyttää hiukan erilaiselta. Jossain
+tilanteissa while on sopivampi kuin myös joskus on saa etua kun käyttää foria.
+Esimerkki:
+ {% highlight c# linenos %}
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		int i = 0;
+		while (i < 6)
+		{
+		   Console.WriteLine(i);
+		   i = i + 2;
+		}
+	}
+}
+{% endhighlight %}
+while-silmukassa siis indeksimuuttuja esitellään ennen silmukkaa, ja while-sanan jälkeen
+kerrotaan vain miten kauan silmukkaa pyöritetään. Myöskin indeksimuuttujan mahdollinen
+kasvattaminen tehdään silmukan sisällä. Tässä i kasvaa joka kierroksella kahdella.
+
+Tulostus olisi:
+{% highlight c#  %}
+0
+2
+4
+{% endhighlight %}
+</p>
+</p>
+<h2 id="ifelse">
+If - else -rakenne
+</h2>
+<p> If-rakenteen avulla voidaan toteuttaa tietty operaatio, jos haluttu ehto on tosi.
+Esimerkiksi tulostetaan kokonaislukutaulukon alkio, jos se on suurempi kuin 5.
+  {% highlight c# linenos %}
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		int[] taulukko_b = { 3, 4, 1, 100, 6 }; 
+
+		for (int i = 0; i < taulukko_b.Length ; i++)
+                 {
+		   if ( taulukko_b[i] > 5)
+		    {
+		     Console.WriteLine(taulukko_b[i]);
+		    }
+                    
+                 }
+	}
+}
+{% endhighlight %}
+Ylläolevassa esimerkissä käydään taulukko läpi for-silmukalla ja jokaisella kierroksella
+tutkitaan, onko tarkasteltava alkio suurempi kuin 5. Jos on, se tulostetaan. Tulostus olisi
+{% highlight c#  %}
+100
+6
+{% endhighlight %}
+Lisätään vielä edelliseen esimerkkiin else-rakenne. Tämän rakenteen avulla voidaan kertoa,
+mitä tehdään jos ehtomme ei toteudu.
+  {% highlight c# linenos %}
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		int[] taulukko_b = { 3, 4, 1, 100, 6 }; 
+
+		for (int i = 0; i < taulukko_b.Length ; i++)
+                 {
+		   if ( taulukko_b[i] > 5)
+		    {
+		     Console.WriteLine(taulukko_b[i]);
+		    }
+	           else
+	           {
+                       Console.WriteLine("Alkio on pienempi kuin 5.");
+	           }
+                 }
+	}
+}
+{% endhighlight %}
+Tulostus olisi:
+{% highlight c#  %}
+Alkio on pienempi kuin 5.
+Alkio on pienempi kuin 5.
+Alkio on pienempi kuin 5.
+100
+6
+{% endhighlight %}
+</p>
+<h2 id="aliohjelmat">
+Aliohjelmat
+</h2>
+<p>
+Operaatiosta kannattaa tehdä aliohjelma, jos on todennäkoistä, että kyseinen operaatio
+halutaan suorittaa uudelleen eri arvoille. Tällainen tilanne voisi olla esim. kolmion
+pinta-alan laskeminen. Oletetaan, että meillä on usein tilanne, jossa tiedämme suorakulmion
+kannan ja korkeuden ja haluamme ulkoistaa pinta-alan laskemisen muualle. Tehdään siitä
+aliohjelma:
+{% highlight c# linenos %}
+    /// <summary>
+    /// Aliohjelma laskee suorakulmion pinta-alan
+    /// </summary>
+    /// <param name="kanta">Suorakulmion kanta</param>
+    /// <param name="korkeus">Suorakulmion korkeus</param>
+    /// <returns>Suorakulmion pinta-ala</returns>
+    public static double SuorakulmionPintaAla(double kanta, double korkeus)
+    {
+        return kanta*korkeus;
+    }
+{% endhighlight %}
+Aliohjelman yläpuolella on kommentit, jotka on hyvä muistaa kirjoittaa koodin luettavuuden säilyttämiseksi. Kommenteissa kerrotaan ensin, mitä aliohjelma tekee.
+Sitten esitellään aliohjelman parametrit, eli tiedot joita se tarvitsee toimiakseen. Lopuksi vielä kerrotaan, mitä tietoa aliohjelma palauttaa. Tässä tapauksessa se palauttaa
+pinta-alan. Jos aliohjelma palauttaa jotain tietoa sitä kutsutaan itseasiassa funktioksi. Katsotaan kohta millainen olisi pelkkä aliohjelma.
+</p>
+<p>
+Aliohjelman esittelyrivillä "public" ja "static" sanoista ei tarvitse vielä kauheasti välittää,
+mutta kolmas sana "double" määräytyy sen mukaan, minkä tyyppistä tietoa aliohjelma palauttaa.
+Tässä tapauksessa se palauttaa pinta-alan, joka on reaaliluku eli double. Seuraavaksi tulee aliohjelman
+nimi ja sulkuihin parametrit. Aliohjelmaa esiteltäessä täytyy sulkuihin kirjoittaa myös
+parametrien tyypit. Aliohjelman sisältö on tässä tapauksessa melko lyhyt, siinä kirjoitetaan
+vain mitä aliohjelma palauttaa, eli kanta*korkeus.
+
+</p>
+<p>
+Katsotaan sitten miten tuota aliohjelmaa käytetään pääohjelmasta: (Tulostuksen voit kokeilla 
+itse. Kopioi koodi, mene sivulle <a href = "https://ideone.com/"> https://ideone.com/</a>,
+vaihda kieleksi C#, liitä koodi ja paina "run".)
+{% highlight c# linenos %}
+    using System;
+
+    public class Test
+    {
+    	public static void Main()
+    	{
+             double kanta_a = 5.4;
+             double korkeus_a = 2.3;
+             
+             double kanta_b = 3.3;
+             double korkeus_b = 4.0;
+             
+             double ala_a = SuorakulmionPintaAla(kanta_a, korkeus_a);
+             double ala_b = SuorakulmionPintaAla(kanta_b, korkeus_b);
+             
+             Console.WriteLine(ala_a);
+             Console.WriteLine(ala_b);
+    	}
+    
+	
+        /// <summary>
+        /// Aliohjelma laskee suorakulmion pinta-alan
+        /// </summary>
+        /// <param name="kanta">Suorakulmion kanta</param>
+        /// <param name="korkeus">Suorakulmion korkeus</param>
+        /// <returns>Suorakulmion pinta-ala</returns>
+        public static double SuorakulmionPintaAla(double kanta, double korkeus)
+        {
+            return kanta*korkeus;
+        }
+	
+    }
+{% endhighlight %}
+
+Pääohjelmassa siis esitellään kaksi eri pinta-alaa, joihin sijoitetaan arvot kutsumalla tekemäämme
+aliohjelmaa (funktiota). Kutsuun tulee aliohjelman nimi ja sulkuihin laitetaan ne arvot, joilla aliohjelman
+halutaan laskelmansa tekevän. Näin tämän aliohjelman(funktion) palauttama arvo siis sijoitetaan
+pinta-ala-muuttujiin.
+
+</p>
+<p>
+Katsotaan myös esimerkki puhtaasta aliohjelmasta (eli ei funktiosta!), joka ei siis
+palauta mitään. Tehdään aliohjelma, joka tulosta sille annetun sanan aina isoilla
+kirjaimilla:
+
+{% highlight c# linenos %}
+    using System;
+
+    public class Test
+    {
+    	public static void Main()
+    	{
+            string nimi = "pekka";
+            
+            Tulosta(nimi);
+            Tulosta("PiRjo");
+      
+    	}
+    
+	
+        /// <summary>
+        /// Tulostaa isona
+        /// </summary>
+        /// <param name="sana">Tulostettava sana</param>
+        /// <returns></returns>
+        public static void Tulosta(string sana)
+        {
+            Console.WriteLine(sana.ToUpper());
+        }
+	
+    }
+{% endhighlight %}
+Kun on kyse aliohjelmasta (joka siis ei palauta mitään!!), esittelyrivin kolmas sana on "void".
+Tässä tapauksessa myöskään "return" -sanaa ei tarvitse olla ohjelman sisällä. Tässä myös
+esimerkki metodista ToUpper(), joka ottaa string-muuttujasta kopion ja
+muuttaa kaikki kirjaimet isoiksi. 
+Tässä vaiheessa ei tarvitse tietää syvemmin, mikä on metodi. Se olisi hyvä tietää, 
+että on olemassa tällaisia metodeita, joilla saadaan tehtyä esim. kirjainkoon muutoksia
+tai erilaisia vertailuja.
+</p>
+</div>
