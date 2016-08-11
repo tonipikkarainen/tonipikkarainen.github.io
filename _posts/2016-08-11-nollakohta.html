@@ -1,0 +1,111 @@
+---
+layout: post
+title:  "Funktion nollakohdan ohjelmointi"
+date:   2016-08-11 17:00:43 +0300
+categories: jekyll update
+---
+<div>
+<p>Tässä tehtävässä on tarkoitus tehdä aliohjelma, jonka avulla voidaan ratkaista
+lineaarisen funktion nollakohta, kun funktion sääntö tunnetaan. Lineaarinen funktio
+on muotoa \(f(x)=k\cdotp x+b\), missä \(k\) ja \(b\) ovat vakioita. Eli tällainen
+funktio on esim. \(f(x)=3x+6\).
+ </p>
+<p>
+Tehtävää voidaan ajatella myös funktion kuvaajan kannalta. lineaarisen funktion kuvaaja
+on suora, jonka yhtälö on \(y=k\cdotp x+b\)). Kuvaajassa nollakohta tarkoittaa sitä
+x-akselin kohtaa, jossa suora leikkaa x-akselin. Tämä johtuu siitä, että etsimme
+suoralta pistettä, jossa y-koordinaatti on nolla. Tämä taas siksi, että y-koordinaatti
+vastaa funktion arvoa ja mehän etsimme pistettä, jossa funktion arvo on nolla.
+Jos siis suoran yhtälö tiedetään, voidaan nollakohta ratkaista sijoittamalla y:n
+paikalle nolla.
+</p>
+<p>
+Nyt siis tavoite olisi tehdä aliohjelma nimeltä Nollakohta, joka osaa ratkaista
+funktion nollakohdan aina, kun funktion lauseke (suoran yhtälö) tunnetaan.
+Viedään aliohjelmalle parametreina kertoimet \(k\) ja \(b\) yhtälöstä \(y=k\cdotp x+b\)).
+Eli jos haluamme tietää funktion \(f(x)=3x+6\) nollakohdan, kutsumme aliohjelmaa
+näin: Nollakohta(3,6). Tässä pohja ohjelmalle. Tehtäväksi jää kysymysmerkkien
+täyttäminen aliohjelman esittelyriville ja aliohjelman sisällön kirjoittaminen.
+Lisäksi voit kokeilla sijoittaa eri arvoja kulmakertoimeksi (k) ja vakiotermiksi (b).
+</p>
+
+Voit kopioida tästä pohjan ja tehdä tehtävän sivulla  <a href = "https://ideone.com/"> https://ideone.com/</a>(
+vaihda kieleksi C#, liitä koodi ja paina "run").
+{% highlight c# linenos %}
+    using System;
+
+    public class Test
+    {
+    	public static void Main()
+    	{
+               double k_1 = 4;// Nämä vastaavat funktiota f(x)=4x+6
+               double b_1 = 6; // Voit vaihdella näitä arvoja ja
+               ///testata eri funktioita(suoria)
+               Console.WriteLine(Nollakohta(k_1, b_1));
+    	}
+    
+	
+        /// <summary>
+        /// Ratkaisee nollakohdan
+        /// </summary>
+        /// <param name="k">Kulmakerroin</param>
+        /// <param name="b">Vakiotermi</param>
+        /// <returns>Nollakohta</returns>
+        public static ??? Nollakohta(??? k, ??? b)
+        {
+            ???
+			...
+        }
+	
+    }
+{% endhighlight %}
+
+
+			
+<button class="vastausnappi"> Näytä vastaus  </button>
+<div id="vastausId" class="hidden">
+Tässä yksi mahdollinen vastaus tehtävään:
+{% highlight c# linenos %}
+    using System;
+
+    public class Test
+    {
+    	public static void Main()
+    	{
+               double k_1 = 4;// Nämä vastaavat funktiota f(x)=4x+6
+               double b_1 = 6; // Voit vaihdella näitä arvoja ja
+               ///testata eri funktioita(suoria)
+               Console.WriteLine(Nollakohta(k_1, b_1));
+    	}
+    
+	
+        /// <summary>
+        /// Ratkaisee nollakohdan
+        /// </summary>
+        /// <param name="k">Kulmakerroin</param>
+        /// <param name="b">Vakiotermi</param>
+        /// <returns>Nollakohta</returns>
+        public static double Nollakohta(double k, double b)
+        {
+            if(k == 0) return 0;		
+            return -b/k;
+        }
+	
+    }
+{% endhighlight %}
+<p>
+"static" sanan jälkeen tulee double, koska haluamme palauttaa reaaliluvun. Myös
+parametrit ovat reaalilukuja. Tässä on tehty niin, että palautetaan nolla, jos
+kulmakerroin on nolla. Tämä siksi, ettei tulisi tilannetta, jossa jaetaan nollalla
+koska silloin ohjelma kaatuu. Nolla ei tällaisessa tapauksessa ole yleensä oikea
+vastaus ongelmaan. Kulmakertoimen ollessa nolla, ohjelman käyttäjän täytyykin itse
+miettiä, mikä nollakohta on vai onko sitä lainkaan. Varsinainen palautettava arvo
+saadaan, kun ratkaistaan yhtälö  \(0=k\cdotp x+b\)). Eli siirretään  \(k\cdotp x\)
+toiselle puolelle ja saadaan:
+ \[-k\cdotp x=b\].
+ Sitten jaetaan puolittain  \(-k\):lla ja saadaan nollakohdaksi:
+ \[x=-\frac{b}{k}\].
+</p>
+</div>
+</div>
+ 
