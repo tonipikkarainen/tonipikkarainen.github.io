@@ -7,7 +7,7 @@ Olen fysiikan, matematiikan ja kemian opettaja ja kohta minulla on pätevyys my�
 tietotekniikan opettamiseen. Haluaisin hyödyntää opetuksessani tietotekniikkaa
 parhaalla mahdollisella tavalla ja ottaa siitä kaiken hyödyn irti. 
 
-Innostuin tovi sitten kovasti [Computer Based Math -projektin] (https://www.computerbasedmath.org/)
+Innostuin tovi sitten kovasti [Computer Based Math -projektin](https://www.computerbasedmath.org/)
 ideoista. Projektin tavoite on, että esimerkiksi matematiikassa keskityttäisiin
 tulevaisuudessa enemmän ongelman tunnistamiseen, matemaattiseen muotoiluun ja 
 tulosten tulkintaan. Annettaisiin koneen tehdä varsinainen laskentatyö.
