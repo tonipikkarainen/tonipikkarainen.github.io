@@ -9,8 +9,8 @@ parhaalla mahdollisella tavalla ja ottaa siitä kaiken hyödyn irti.
 
 Innostuin tovi sitten kovasti [Computer Based Math -projektin](https://www.computerbasedmath.org/)
 ideoista. Projektin tavoite on, että esimerkiksi matematiikassa keskityttäisiin
-tulevaisuudessa enemmän ongelman tunnistamiseen, matemaattiseen muotoiluun ja 
-tulosten tulkintaan. Annettaisiin koneen tehdä varsinainen laskentatyö.
+tulevaisuudessa enemmän ongelman tunnistamiseen, sen matemaattiseen muotoiluun ja 
+tulosten tulkintaan. Varsinainen laskentatyö jäisi koneen tehtäväksi .
 
 Tälle sivulle pyrin keksimään ja löytämään tehtäviä, joissa esimerkiksi yhdistetään
 ohjelmointia ja matematiikkaa. Tehtävä voi liittyä myös fysiikkaan tai kemiaan ja 
