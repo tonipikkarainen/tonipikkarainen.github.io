@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "Ympyrä, osa 2: pinta-ala"
+date:   2016-10-14 08:00:43 +0300
+categories: jekyll update
+---
+<div>
+<p>
+Tehtävässä on tavoitteena löytää kaava ympyrän pinta-alalle, kun ympyrän säde tunnetaan.
+</p>
+<h2>
+Tehtävä 1
+</h2>
+<p>
+Aloitetaan tutkimalla säännöllistä monikulmiota allaolevan sovelluksen avulla. Voit muuttaa
+monikulmion kulmien lukumäärää liukukytkimestä. Tutki monikulmiota, vastaa kysymyksiin ja
+siirry eteenpäin.
+</p>
+<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/aFvCgR2M/width/700/height/415/border/888888/rc/false/ai/false/sdz/true/smb/false/stb/false/stbh/true/ld/false/sri/true/at/auto" width="700px" height="415px" style="border:0px;"> </iframe>
+
+<p>
+Nyt siis tiedämme millaista muotoa säännöllinen monikulmio lähestyy, kun kulmien
+määrää kasvatetaan. Seuraavaksi tehtävänä on muodostaa lauseke monikulmion pinta-alalle.
+Lähestymme siis sen avulla ympyrän pinta-alaa.
+</p>
+<h2>
+Tehtävä 2
+</h2>
+<p>
+Muodosta lauseke monikulmion pinta-alalle käyttäen hyväksi oranssia kolmiota(ABC). Yritä
+saada aikaan lauseke, joka toimii kaikilla \(n\):n arvoilla.
+</p>
+<button class="vastausnappi1"> Näytä apua  </button>
+<div id="vastausId1" class="hidden">
+<p>
+Oranssin kolmion pinta-ala saadaan tutusti "kanta kertaa korkeus jaettuna kahdella" eli
+\[A_{ok}=\frac{hk}{2}\,\,.\]
+Pienen tarkastelun jälkeen huomataan, että näitä kolmioita mahtuu monikulmioon aina kulmien
+lukumäärän verran. Eli monikulmion pinta-ala on
+\[A_{mk}=n\cdotp A_{ok} = n\cdotp\frac{hk}{2}=\frac{hkn}{2}\,\,.\]
+Mikä monikulmion osa itseasiassa on ylläolevassa lausekkeessa oleva \(k\cdotp n\)?
+</p>
+<button class="vastausnappi2"> Näytä lisää apua  </button>
+<div id="vastausId2" class="hidden">
+Tulo \(k\cdotp n\) on itseasiassa monikulmion piiri ja merkitsemme sitä nyt tunnuksella
+\(P_{mk}\). Pinta-ala saa siis muodon
+\[A_{mk}=\frac{hP_{mk}}{2}\,\,.\]
+</div>
+</div>
+<h2>
+Tehtävä 3
+</h2>
+<p>
+Viimeisenä tehtävänä on muodostaa lauseke ympyrän pinta-alalle käyttäen hyväksi tähän
+mennessä saamiamme tietoja. Yritä ensin ilman apua, ja jos ei onnistu, klikkaile apuja
+auki pikkuhiljaa.
+</p>
+<p>
+<button class="vastausnappi3"> apu 1  </button>
+<div id="vastausId3" class="hidden">
+<p>Idea on siis se, että ajatellaan kulmien lukumäärän \(n\) kasvavan todella suureksi.
+Huomasimme jo tehtävässä 1, että monikulmio lähestyy silloin ympyrän muotoa. Tämän
+havainnon avulla olisi tarkoitus muokata monikulmion pinta-alan kaava
+\[A_{mk}=\frac{hP_{mk}}{2}\,\,\]
+ympyrän pinta-alan kaavaksi. Ympyrän pinta-alan täytyy riippua siis vain ympyrän
+säteestä \(R\). 
+</p>
+</div>
+</p>
+<p>
+<button class="vastausnappi4"> apu 2  </button>
+<div id="vastausId4" class="hidden">
+<p>
+Kun n kasvaa todella suureksi niin \(h\) lähestyy ympyrän sädettä \(R\). Matemaattisesti
+ilmaistuna kun \(n\rightarrow \infty\), niin \(h\rightarrow R\). Mitä monikulmion piiri
+lähestyy, kun n lähestyy ääretöntä?
+</p>
+</div>
+</p>
+<p>
+<button class="vastausnappi5"> apu 3  </button>
+<div id="vastausId5" class="hidden">
+<p>
+Kun \(n\rightarrow \infty\), niin \(P_{mk}\rightarrow 2 \pi R\) eli monikulmion piiri
+lähestyy ympyrän piiriä, koska monikulmio lähestyy ympyrän muotoa. Eli kun \(n\rightarrow \infty\), 
+niin \[A_{mk}\rightarrow \frac{R\cdotp 2 \pi R}{2}=\pi R^2\] ja koska huomasimme, että
+monikulmio lähestyy ympyrän muotoa tämän täytyy olla ympyrän pinta-alan kaava!
+</p>
+</div>
+</p>
+</div>
