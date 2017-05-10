@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Kuka ja mitä
+title: Kuka ja mit
 permalink: /about/
 ---
 Olen fysiikan, matematiikan ja kemian opettaja ja kohta minulla on pätevyys myös
