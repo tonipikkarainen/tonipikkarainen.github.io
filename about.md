@@ -1,8 +1,12 @@
 ﻿---
 layout: page
+
 title: Kuka ja mitä
+
 permalink: /about/
+
 ---
+
 Olen fysiikan, matematiikan, kemian ja tietotekniikan opettaja. Haluaisin hyödyntää opetuksessani tietotekniikkaa
 parhaalla mahdollisella tavalla ja ottaa siitä kaiken hyödyn irti. 
 
