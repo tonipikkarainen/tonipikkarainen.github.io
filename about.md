@@ -1,20 +1,20 @@
-ï»¿---
+---
 layout: page
-title: Kuka ja mitÃ¤
+title: Kuka ja mitä
 permalink: /about/
 ---
-Olen fysiikan, matematiikan ja kemian opettaja ja kohta minulla on pÃ¤tevyys myÃ¶s
-tietotekniikan opettamiseen. Haluaisin hyÃ¶dyntÃ¤Ã¤ opetuksessani tietotekniikkaa
-parhaalla mahdollisella tavalla ja ottaa siitÃ¤ kaiken hyÃ¶dyn irti. 
+Olen fysiikan, matematiikan ja kemian opettaja ja kohta minulla on pätevyys myös
+tietotekniikan opettamiseen. Haluaisin hyödyntää opetuksessani tietotekniikkaa
+parhaalla mahdollisella tavalla ja ottaa siitä kaiken hyödyn irti. 
 
 Innostuin tovi sitten kovasti [Computer Based Math -projektin](https://www.computerbasedmath.org/)
-ideoista. Projektin tavoite on, ettÃ¤ esimerkiksi matematiikassa keskityttÃ¤isiin
-tulevaisuudessa enemmÃ¤n ongelman tunnistamiseen, sen matemaattiseen muotoiluun ja 
-tulosten tulkintaan. Varsinainen laskentatyÃ¶ jÃ¤isi koneen tehtÃ¤vÃ¤ksi .
+ideoista. Projektin tavoite on, että esimerkiksi matematiikassa keskityttäisiin
+tulevaisuudessa enemmän ongelman tunnistamiseen, sen matemaattiseen muotoiluun ja 
+tulosten tulkintaan. Varsinainen laskentatyö jäisi koneen tehtäväksi .
 
-TÃ¤lle sivulle pyrin keksimÃ¤Ã¤n ja lÃ¶ytÃ¤mÃ¤Ã¤n tehtÃ¤viÃ¤, joissa esimerkiksi yhdistetÃ¤Ã¤n
-ohjelmointia ja matematiikkaa. TehtÃ¤vÃ¤ voi liittyÃ¤ myÃ¶s fysiikkaan tai kemiaan ja 
-siinÃ¤ voidaan kÃ¤yttÃ¤Ã¤ esim. Geogebra-ohjelmistoa. Eli aina ei ohjelmoida, mutta
-jollakin tavalla TVT tehtÃ¤viin liittyy.
+Tälle sivulle pyrin keksimään ja löytämään tehtäviä, joissa esimerkiksi yhdistetään
+ohjelmointia ja matematiikkaa. Tehtävä voi liittyä myös fysiikkaan tai kemiaan ja 
+siinä voidaan käyttää esim. Geogebra-ohjelmistoa. Eli aina ei ohjelmoida, mutta
+jollakin tavalla TVT tehtäviin liittyy.
 
-Tein sivuille myÃ¶s Ohjelmoinnin perusteita -osion, josta pitÃ¤isi lÃ¶ytyÃ¤ apua ohjelmointitehtÃ¤viin.
+Tein sivuille myös Ohjelmoinnin perusteita -osion, josta pitäisi löytyä apua ohjelmointitehtäviin.
