@@ -1,13 +1,10 @@
 ﻿---
 layout: page
-
 title: Kuka ja mitä
-
 permalink: /about/
-
 ---
-
-Olen fysiikan, matematiikan, kemian ja tietotekniikan opettaja. Haluaisin hyödyntää opetuksessani tietotekniikkaa
+Olen fysiikan, matematiikan ja kemian opettaja ja kohta minulla on pätevyys myös
+tietotekniikan opettamiseen. Haluaisin hyödyntää opetuksessani tietotekniikkaa
 parhaalla mahdollisella tavalla ja ottaa siitä kaiken hyödyn irti. 
 
 Innostuin tovi sitten kovasti [Computer Based Math -projektin](https://www.computerbasedmath.org/)
@@ -21,5 +18,3 @@ siinä voidaan käyttää esim. Geogebra-ohjelmistoa. Eli aina ei ohjelmoida, mu
 jollakin tavalla TVT tehtäviin liittyy.
 
 Tein sivuille myös Ohjelmoinnin perusteita -osion, josta pitäisi löytyä apua ohjelmointitehtäviin.
-
-
