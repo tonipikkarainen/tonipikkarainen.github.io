@@ -3,19 +3,8 @@ layout: page
 title: Kuka ja mitä
 permalink: /about/
 ---
-Olen fysiikan, matematiikan, kemian ja tietotekniikan opettaja. Haluaisin hyödyntää opetuksessani tietotekniikkaa
-parhaalla mahdollisella tavalla ja ottaa siitä kaiken hyödyn irti. 
+Olen fysiikan, matematiikan, kemian ja tietotekniikan opettaja. Tavoitteeni on hyödyntää opetuksessani tietotekniikkaa parhaalla mahdollisella tavalla. 
 
-Innostuin tovi sitten kovasti [Computer Based Math -projektin](https://www.computerbasedmath.org/)
-ideoista. Projektin tavoite on, että esimerkiksi matematiikassa keskityttäisiin
-tulevaisuudessa enemmän ongelman tunnistamiseen, matemaattiseen muotoiluun ja 
-tulosten tulkintaan. Annettaisiin koneen tehdä varsinainen laskentatyö.
+Tälle sivulle on kehitän tehtäviä, joissa opitaan matemaattisten aineiden sisältöjä ohjelmoinnin avulla. Esimerkiksi fysiikassa on monia ilmiöitä, joita voidaan itse mallintaa ohjelmoimalla. Tällainen ilmiöiden mallintaminen voi tukea ja jopa syventää ilmiöiden omaksumista. Lisäksi se kehittää ongelmanratkaisutaitoja, algoritmista ja luovaa ajattelua ja tietoteknisiä taitoja. 
 
-Tälle sivulle pyrin keksimään ja löytämään tehtäviä, joissa esimerkiksi yhdistetään
-ohjelmointia ja matematiikkaa. Tehtävä voi liittyä myös fysiikkaan tai kemiaan ja 
-siinä voidaan käyttää esim. Geogebra-ohjelmistoa. Eli aina ei ohjelmoida, mutta
-jollakin tavalla TVT tehtäviin liittyy.
-
-Tein sivuille myös Ohjelmoinnin perusteita -osion, josta pitäisi löytyä apua ohjelmointitehtäviin.
-
-
+Ilmiön mallintaminen ohjelmoimalla antaa esimerkiksi helpon mahdollisuuden tutkia alkuarvojen vaikutuksia lopputulokseen. Näin voidaan esimerkiksi tutkia nopeuden vaikutusta liike-energiaan sen sijaan, että vain laskettaisiin liike-energiaa yksittäisillä nopeuksilla. 
