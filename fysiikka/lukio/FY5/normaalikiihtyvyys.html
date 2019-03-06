@@ -5,8 +5,64 @@ permalink: /fysiikka/lukio/FY5/normaalikiihtyvyys
 type: FY5
 nimi: Normaalikiihtyvyys
 ---
-<h1>Normaalikiihtyvyys </h1>
+<h1>Normaalikiihtyvyys</h1>
 
+<p><b>Tässä tehtävässä määritämme "kokeellisesti" simulaation avulla tasaiseen ympyräliikkeeseen vaaditun normaalikiihtyvyyden \(a_n\) ja ratanopeuden \(v\) yhteyden.</b></p>
+<p>Simulaatioon on koodattu punainen pallo, jolle voimme muuttaa esimerkiksi alkunopeutta. Tällä hetkellä alkunopeus on 10 ja alussa nopeudella on vain y-suuntainen komponentti. Simulaatiossa on myös sininen laatikko, jota pallo kiertää. Palloon kohdistuu koko ajan siniseen laatikkoon osoittava voima, jonka suuruutta voimme muuttaa muuttamalla voiman aiheuttamaa kiihtyvyyttä a_n. Valkoinen nuoli kuvaa pallon etäisyyttä keskipisteestä alkutilanteessa.</p>
+<p>
+	Tavoitteena on saada aikaan tasainen ympyräliike eri alkunopeuksilla. Eli etsitään tiettyä alkunopeutta vastaava kiihtyvyyden arvo, jolla pallo saadaan liikkumaan tasaista ympyräliikettä. Tasaisessa ympyräliikkeessä siis vain pallon nopeuden suunta muuttuu, nopeuden suuruuden pysyessä vakiona.
+</p>
+<p>
+	Etsi sellainen kiihtyvyys, jolla saat aikaan tasainen ympyräliikkeen kullekin alkunopeuden arvolle:
+</p>
+<table>
+	<tr>
+		<th>Nopeus</th>
+		<th>Kiihtyvyys<th>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td><td>
+	</tr>
+	<tr>
+		<td>20</td>
+		<td><td>
+	</tr>
+	<tr>
+		<td>30</td>
+		<td><td>
+	</tr>
+	<tr>
+		<td>40</td>
+		<td><td>
+	</tr>
+	<tr>
+		<td>50</td>
+		<td><td>
+	</tr>
+</table>
+<p>
+	Sijoita mittauspisteet \((a_n,v)\) -koordinaatistoon (voit myös sovittaa niihin sopivan kuvaajan.)
+	<ul>
+		<li>	 Millainen kuvaaja on? </li>
+		<li>Millainen yhteys on normaalikiihtyvyyden ja ratanopeuden välillä? (millä tavalla normaalikiihtyvyys on verrannollinen ratanopeuteen?)</li>
+	</ul>
+
+	
+</p>
 <iframe src="https://trinket.io/embed/glowscript/3ba6cce686" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
+<button class="vastausnappi1"> Näytä malliratkaisu  </button>
+<div id="vastausId1" class="hidden">
+<p>Tässä nopeuksia vastaavat kiihtyvyydet:</p>
+<img src="/kuvat/taulu_norm_kiiht.png" >
+<p>
+	Tässä mittauspisteisiin sovitettu kuvaaja:
+</p>
+<img src="/kuvat/kuva_norm_kiiht.png" >
 
+<p>
+	Sovitetun kuvaajan muoto ja kuvaajan yhtälö \(g(x)=0.1x^2\) <b>(eli \(a_n(v)=0.1v^2)\)</b> kertovat, että normaalikiihtyvyys on suoraan verrannollinen ratanopeuden neliöön. Edessä on lisäksi kerroin, joka on tässä tapauksessa 0,1. Kerroin aiheutuu säteestä r (simulaatiossa r=10). <b>Kokonaisuudessaan normaalikiihtyvyyden lauseke tasaisessa ympyräliikkeessä on </b> \[a_n=\frac{v^2}{r}.\]
+</p>
+
+</div>

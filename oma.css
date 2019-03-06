@@ -46,3 +46,16 @@
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
 }
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+table {
+  border-spacing: 5px;
+}
