@@ -52,7 +52,7 @@ table, th, td {
   width: 50%;
 }
 
-th, td {
+.omataulukko{
   padding: 15px;
   text-align: center;
 }
