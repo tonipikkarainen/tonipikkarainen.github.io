@@ -20,13 +20,28 @@
 	}
     line-height: 56px;
     letter-spacing: -1px;
-    margin-bottom: 0;
     float: right;
 
     &,
     &:visited {
         color: $grey-color-dark;
     }
+}
+.site-subtitle {
+    font:{
+        size: 18px;
+        weight: 400;
+        family:'Cormorant SC', serif;
+    }
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: right;
+
+    &,
+    &:visited {
+        color: $grey-color-dark;
+   }
 }
 
 .site-nav {
