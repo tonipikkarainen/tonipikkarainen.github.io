@@ -1,0 +1,94 @@
+---
+layout: page
+title: 
+permalink: /fysiikka/lukio/FY5/3gravitaatio
+type: FY5
+nimi: 3 Gravitaatio
+---
+<h1>Gravitaatio ja satelliitin liike</h1>
+<p> Planeetan aiheuttama putoamiskiihtyvyys tietyllä etäisyydellä planeetasta ilmaisee planeetan aiheuttaman gravitaatiokentän suuruuden kyseisellä etäisyydellä: \[g_r=\gamma \frac{m}{r^2},\] missä \(\gamma\) on gravitaatiovakio, \(m\) planeetan massa ja \(r\) etäisyys planeetan keskipisteestä.</p>
+
+<p>Tässä tehtävässä mallinnetaan satelliitin liikettä, joka kiertää maapalloa 840 km:n korkeudella tasaisella nopeudella. Tarkoitus on etsiä mallintamalla nopeus, jolla tasainen ympyräliike kyseisellä korkeudella toteutuu ja lisäksi tarkistaa tulos laskemalla.</p>
+
+<p> Tehtävässä on annettu muutamia rivejä koodia, tässä on tarkoitus ohjelmoida itse hiukan enemmän kuin aiemmissa tehtävissä.</p>
+<h2>Tehtävät:</h2>
+<h3>Osa 1</h3>
+<p>
+	Tehtävänannot ovat koodin seassa kommentteina, mutta lisättäköön ne myös tähän. Tavoitellut koodirivit löytyvät, "näytä vastaus" -nappien takaa, mutta yritä luoda ne itse.
+	<ol>
+		<li> Luo muuttuja "maan_massa" ja anna sille oikea arvo.</li>
+		<li> Luo muuttuja "gamma" (gravitaatiovakio) ja anna sille oikea arvo.</li>
+		<li> Luo muuttuja "g_r", joka on maan gravitaatiokentän voimakkuus
+			(eli satelliitin kokema putoamiskiihtyvyys)
+			satelliitin etäisyydellä maan keskipisteestä.
+			kirjoita g_r:lle lauseke gamman, maan massan ja satelliitin 
+			etäisyyden mag(satelliitti.pos) avulla.</li>
+
+<button class="vastausnappi1"> Näytä vastaus  </button>
+<div id="vastausId1" class="hidden">
+{% highlight python %}
+
+maan_massa = 5.974*10**24 #kg
+gamma = 6.67428*10**-11 # Nm^2/kg^2
+g_r = gamma*maan_massa / mag(satelliitti.pos)**2
+
+{% endhighlight %}
+</div>
+<li>Luo muuttuja nopeus (joka on satelliitin nopeus) - tätä on tarkoitus vaihdella ja etsiä oikea nopeus.</li>
+<li>Luo vektori satelliitti.nopeus, jossa satelliitille annetaan aluksi muuttujan "nopeus" suuruinen y-suuntainen nopeus</li>
+
+<li>
+	Luo muuttuja "t" (aika) ja aseta se aluksi nollaan
+</li>
+<li>
+	Luo muuttuja "dt", joka kuvaa sitä, kuinka paljon aikaa kasvatetaan kerrallaan. (arvo voi olla esim. 1)
+</li>
+<button class="vastausnappi2"> Näytä vastaus  </button>
+<div id="vastausId2" class="hidden">
+{% highlight python %}
+
+nopeus = 9000
+satelliitti.nopeus = vector(0,nopeus,0)
+t = 0
+dt  = 1
+
+
+{% endhighlight %}
+</div>
+</br>
+<b>Silmukka:</b>
+<li>
+	Luo yhtälö satelliitin nopeuden muuttumiselle - vinkki: Yhtälö: v = v_0 + a*t (ja apua tehtävästä 2 normaalikiihtyvyys)
+</li>
+<li>
+	 Luo yhtälö satelliitin paikan muuttumiselle: s = s_0 + v*t
+</li>
+<li>
+	Kiihtyvyyden suuruus ja suunta (ja koko vektori) pitää myös päivittää sillä ne riippuvat satelliitin paikasta.
+</li>
+<li>
+	Lopuksi kasvata aikaa muuttujan "dt" verran
+</li>
+<button class="vastausnappi3"> Näytä vastaus  </button>
+<div id="vastausId3" class="hidden">
+{% highlight python %}
+# Nämä silmukkaan:
+
+satelliitti.nopeus = satelliitti.nopeus + g_vek*dt
+satelliitti.pos = satelliitti.pos + satelliitti.nopeus*dt
+
+g_r = gamma*maan_massa / mag(satelliitti.pos)**2
+kiihtyvyys_suunta = -norm(satelliitti.pos)
+g_vek = g_r * kiihtyvyys_suunta
+
+t = t + dt
+
+
+{% endhighlight %}
+</div>
+	</ol>
+</p>
+<iframe src="https://trinket.io/embed/glowscript/77b8117593?toggleCode=true" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<h3>Osa 2</h3>
+<p> Kun olet saanut satelliitin kiertämään maata, etsi kokeilemalla nopeus, jolla satelliitti saadaan pysymään ympyräradalla. Tarkista vastauksesi laskemalla nopeus yhtälöiden \(F=\gamma \frac{mM}{r^2}\) ja \(a_n=\frac{v^2}{r}\) avulla.</p>
