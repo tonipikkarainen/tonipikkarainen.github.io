@@ -3,9 +3,82 @@ layout: page
 title: 
 permalink: /fysiikka/lukio/FY5/4jousivakio
 type: FY5
-nimi: 4 Jousivakio
+nimi: 4 Harmoninen voima
 ---
-<h1>4 Jousivakio</h1>
-<p>Tehtävänanto tulossa pian.</p>
+<h1>4 Harmoninen voima</h1>
+<p>Harmoninen voima kohdistuu aina tiettyyn tasapainoasemaan ja on suoraan verrannollinen kappaleen poikkeamaan tasapainoasemasta. Tästä esimerkkinä on jousivoima \[\bar{F} = -k\bar{x}, \] missä \(k\) on jousivakio ja \(\bar{x}\) on poikkeama tasapainoasemasta.</p> 
+<p>Tässä tehtävässä tavoitteena on ohjelmoida laatikko värähtelemään jousen päässä vaakasuoralla alustalla käyttäen hyväksi jousivoiman yhtälöä. Lisäksi tutkimme, kuinka jousen jousivakio ja laatikon massa vaikuttavat värähtelyyn.</p>
+
+<h2>Tehtävät</h2>
+<h3>Osa 1</h3>
+<p>Koodiin on valmiiksi luotu jousi ja sen päähän laatikko:
+{%highlight python %}
+paino = box(pos = vector(10,0,0),height=2, width=2, color = color.red)
+jousi = helix(pos=vector(0,0,0), axis=paino.pos, radius=0.5, coils = 10)
+tasapainoasema = arrow(pos=vector(7.5,-5,0), axis = vector(0,3,0))
+{%endhighlight%}
+Painon x-koordinaatti on aluksi 10 ja jousi on luotu siten, että se alkaa origosta ja päättyy painon kohdalle. Kierroksia jousessa on 10. Lisäksi tasapainoasema on merkattu nuolella.
+</p>
+<ol>
+	<li>
+		Luo muuttujat "k" (jousivakio, arvo vaikka 10), "paino.m" (laatikon massa, arvo esim. 10), "paino.nopeus" (laatikon nopeus alussa, arvo 0).
+	</li>
+	<button class="vastausnappi1"> Näytä vastaus  </button>
+<div id="vastausId1" class="hidden">
+{% highlight python %}
+k = 50 # N/m
+paino.m = 10 # kg
+paino.nopeus = 0
+
+{% endhighlight %}
+</div>
+	<li>
+		Luo muuttujat aika ja ajan muutos. (vinkki: katso mallia edellisistä)
+	</li>
+	<b>Silmukka: (luo seuraavat silmukan sisään)</b>
+	<li>
+		Luo muuttuja "x", joka on laatikon poikkeama tasapainoasemasta. Sovitaan, että tasapainoasema on x-akselilla ja sen x-koordinaatti on 7,5. Mieti, miten saat kirjoitettua poikkeaman laatikon x-koordinaatin paino.pos.x ja tasapainoaseman avulla.
+	</li>
+		<button class="vastausnappi2" > Näytä vastaus  </button>
+<div id="vastausId2" class="hidden">
+{% highlight python %}
+# tasapainoasema (7.5, 0 , 0)
+x = paino.pos.x - 7.5
+
+{% endhighlight %}
+</div>
+	<li>
+		Luo muuttuja "F" (jousivoima) ja kirjoita sille lauseke jousivakion ja poikkeaman x avulla. 
+	</li>
+	<li> Muuta painon nopeutta eli kirjoita nopeudelle uusi arvo yhtälön \(v = v_0 + a\Delta t\)  mukaisesti. Ratkaise laatikon kiihtyvyys jousivoiman F ja Newtonin toisen lain F = ma avulla. (oletetaan, että paino liikkuu kitkattomalla pinnalla.</li>
+
+<button class="vastausnappi3" > Näytä vastaus  </button>
+	<div id="vastausId3" class="hidden">
+{% highlight python %}
+# Jousivoima
+F = -k * x 
+
+# -kx = ma
+# a = -kx / m -> a = F/m
+paino.nopeus = paino.nopeus + F/paino.m*dt
+{% endhighlight %}
+</div>
+<li>
+	Muuta vielä laatikon paikkaa nopeuden avulla (yhtälö: \(s = s_0 + v\Delta t\) ). Lisäksi päivitä jousi kulkemaan laatikon mukana (jousi.axis pitää olla sama kuin laatikon paikka). Lopuksi kasvata aikaa yhdelle ajan muutos -askeleella.
+</li>
+
+<button class="vastausnappi4" > Näytä vastaus  </button>
+	<div id="vastausId4" class="hidden">
+{% highlight python %}
+paino.pos = paino.pos + vector(paino.nopeus,0,0)*dt
+jousi.axis = paino.pos
+
+t = t + dt
+{% endhighlight %}
+</div>
+</ol>
 
 <iframe src="https://trinket.io/embed/glowscript/16aab2f6c2?toggleCode=true" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<h3>Osa 2</h3>
+<p> Tee ennuste siitä, miten sekä jousivakion että laatikon massan muuttaminen vaikuttavat laatikon värähtelyyn. Tutki tilannetta muuttamalla kyseisiä arvoja.</p>
