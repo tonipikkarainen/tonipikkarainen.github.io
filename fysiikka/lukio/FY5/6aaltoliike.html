@@ -5,8 +5,104 @@ permalink: /fysiikka/lukio/FY5/6aaltoliike
 type: FY5
 nimi: 6 Aaltoliike
 ---
-<h1>6 Aaltoliike</h1>
+<h1>6 Poikittainen aaltoliike</h1>
 
-<p>Tehtävänanto tulossa pian</p>
+<p>Tehtävässä on tarkoitus rakentaa simulaatio köydestä, jolla voimme tutkia poikittaista aaltoliikettä. Köysi rakennetaan yksittäisistä palloista. Koodissa on aluksi luotu muuttuja "pallo_lkm", jolla voimme säätää köydessä olevien pallojen lukumäärää.  </p>
+<p>Käydään läpi kuinka pallot on luotu:
+<ul>
+	<li>Luodaan ensin lista nimeltä "pallot". Tähän listaan säilömme luomamme pallot.</li>
+	<li>
+		Sitten luodaan for-silmukka, jossa i käy läpi arvot 0 - "pallo_lkm" lukumäärä: for i in range (pallo_lkm).
+	</li>
+	<li> Silmukan sisällä luodaan punainen pallo, JOS i on jaollinen viidellä. (Eli joka viides pallo on punainen. (if)</li>
+	<li>
+		Muutoin luodaan valkoinen pallo. (else)
+	</li>
+</ul> </p>
 
-<iframe src="https://trinket.io/embed/glowscript/1574e3f702?toggleCode=true" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<h2>Tehtävät:</h2>
+<h3>Osa 1 - simulaation luominen</h3>
+<ol>
+	<li>Luo muuttuja "k", joka kuvaa köyden jäykkyyttä. Aseta arvoksi vaikka 50.
+	</li>
+	
+	<li> Luo muuttuja "massa", joka on nyt yksittäisten, käyden muodostavien pallojen massa. Anna arvoksi melko pieni arvo, esim. 0,05.
+	</li>
+	<li>Luo muuttuja "vaim_kerroin", joka kuvaa aallon vaimenemista köydessä. Anna arvoksi esim. 3.</li>
+<button class="vastausnappi1"> Näytä vastaus  </button>
+<div id="vastausId1" class="hidden">
+{% highlight python %}
+k = 50# N/m
+massa = 0.05 # kg
+vaim_kerroin = 2
+
+
+{% endhighlight %}
+</div>
+</br>
+Seuraavaksi koodissa on muutama funktio sitä varten, että saamme liikutettua hiirellä köyden ensimmäistä palloa. Siirrytään silmukkaan:
+<li> Luo while-silmukka, joka pyörii "ikuisesti" (eli niin kauan, kun ohjelma jotenkin keskeytetään) ja aseta haluamasi rate.</li>
+<li> Seuraavaksi luo while-silmukan sisään for-silmukka, jossa i käy läpi arvot 1 - pallojen lukumäärä. Näin kierros päästään aloittamaan toisesta pallosta, sillä ensimmäisen pallon indeksi on 0 (pallot[0] on siis ensimmäinen pallo)</li>
+
+	<button class="vastausnappi2"> Näytä vastaus  </button>
+
+	<div id="vastausId2" class="hidden">
+{% highlight python %}
+for i in range(1,pallo_lkm):
+{% endhighlight %}
+<b> HUOM! Itseasiassa merkintä "for i in range(1,pallo_lkm)" tarkoittaa, että i käy läpi arvot 1 - pallo_lkm-1. Sillä jos listassa on 3 palloa, niin viimeisen indeksi on 2. (Koska indeksit alkaa nollasta!)</b>
+</div>
+</br>
+Tässä silmukassa haluamme siis tehdä kaikille köyden palloille jotain. Koska voimme hiiren avulla liikuttaa ensimmäistä palloa, haluamme, että ensimmäisen pallon liike vaikuttaa muihin palloihin. Tilanteen voi mallintaa esim. niin, että ajatellaan kahden peräkkäisen pallon väliin jousi, jolla on tietty jousivakio (köyden jäykkyys). Venymäksi voidaan ajatella pallojen <b>y-koordinaattien erotus</b>. Silloin kun tämä erotus on nolla, pallot ovat vierekkäin eikä palloihin kohdistu venymästä aiheutuvaa voimaa. (\(F=-kx\)) Tässä tapauksessa meidän täytyy vielä vaimentaa palloon kohdistuvaa voimaa termillä \(bv\), missä \(b\) on vaimennus kerroin ja \(v\) on pallon nopeus. Kokonaisuudessaan palloon kohdistuva voima siis olisi \(F=-kx-bv\), missä \(x\) siis on pallon sitä edeltävän pallon y-koordinaattien erotus. 
+<li> Kirjoita for-silmukan sisään palloon i (pallot[i]) kohdistuvan voiman suuruus.</li>
+	<button class="vastausnappi3"> Näytä vastaus  </button>
+
+	<div id="vastausId3" class="hidden">
+{% highlight python %}
+F = -k*(pallot[i].pos.y-pallot[i-1].pos.y)-vaim_kerroin*pallot[i].nopeus
+{% endhighlight %}
+
+</div>
+<li>Kirjoita for-silmukan sisään pallon i uusi nopeus siihen kohdistuvan voiman avulla.</li>
+<li>Kirjoita for-silmukan sisään pallon i uusi paikka siihen kohdistuvan voiman avulla.</li>
+	<button class="vastausnappi4"> Näytä vastaus  </button>
+
+	<div id="vastausId4" class="hidden">
+{% highlight python %}
+pallot[i].nopeus = pallot[i].nopeus + F/massa*dt
+pallot[i].pos = pallot[i].pos + vector(0,pallot[i].nopeus,0)*dt
+{% endhighlight %}
+
+</div>
+<li> Kasvata lopuksi while-silmukan sisällä aikaa ajan muutoksella.</li>
+Silmukat kokonaisuudessaan: 
+</br>
+<button class="vastausnappi5"> Näytä vastaus  </button>
+
+	<div id="vastausId5" class="hidden">
+{% highlight python %}
+while (True):
+  rate(500)
+  for i in range(1, pallo_lkm):
+    F = -k*(pallot[i].pos.y-pallot[i-1].pos.y)-vaim_kerroin*pallot[i].nopeus
+    pallot[i].nopeus = pallot[i].nopeus + F/massa*dt
+    pallot[i].pos = pallot[i].pos + vector(0,pallot[i].nopeus,0)*dt
+ 
+  t = t + dt
+  
+{% endhighlight %}
+
+</div>
+</ol>
+
+<iframe src="https://trinket.io/embed/glowscript/e7dd62cc79?toggleCode=true" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<h3> Osa 2 - simulaation tutkiminen</h3>
+<ol>
+	<li>
+		Mitä voit sanoa poikittaisesta aaltoliikkeestä simulaation perusteella (Miten syntyy? Mikä ilmiössä liikkuu ja mihin suuntaan?)
+	</li>
+	<li>Tee ennuste siitä, miten köyden jäykkyys vaikuttaa aallon etenemisnopeuteen. Tutki asiaa. </li>
+	<li> Tutki, miten vaimenemiskerroin vaikuttaa aaltoliikkeeseen.</li>
+
+</ol>
