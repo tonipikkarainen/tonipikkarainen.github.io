@@ -3,9 +3,52 @@ layout: page
 title: 
 permalink: /fysiikka/lukio/FY5/5varahtely
 type: FY5
-nimi: 5 Värähtely
+nimi: 5 Harmoninen värähdysliike
 ---
-<h1>5 Värähtely</h1>
+<h1>5 Harmoninen värähdysliike</h1>
 
-<p>Tehtävänanto tulossa pian</p>
+<p>Tehtävässä mallinnetaan harmoninen värähtelijä, kuten edellisessäkin tehtävässä, mutta laitetaan värähtelijä värähtelemään pystysuunnassa. Lisäksi tutkitaan tarkemmin amplitudia, jaksonaikaa ja värähtelijän paikan ja nopeuden kuvaajaa paikan funktiona.</p>
+<p>Koodissa luodaan ensin muuttujat "tasapainoasema" (kuvaa painon tasapainoasemaa y-suunnassa) ja lisäksi "painon_paikka", joka kuvaa paikkaa y-suunnassa, josta paino lähtee liikkeelle. Seuraavaksi luodaan paino, katto ja niihin kiinnittynyt jousi. Käy nämä osat läpi, niin että ymmärrät, mitä niissä tapahtuu. Seuraavaksi luodaan muuttujat "jousivakio" ja "paino.m" (painon massa, tehtävässä jätetään kuitenkin painovoima huomiotta.) Seuraavaksi luodaan kaksi graafia ja kuvaajan pohjaa paikan ja nopeuden kuvaajien piirtämistä varten.</p>
+<h2>Tehtävät</h2>
+<ol><li>Luo while silmukka, jossa laitat painon värähtelemään jousivoiman avulla. Luo lisäksi silmukassa painon paikan ja nopeuden kuvaajat. (katso apua 4 Harmoninen voima ja 1 Ympyräliike ja kulmanopeus)</li>
+<button class="vastausnappi1"> Näytä vastaus  </button>
+
+	<div id="vastausId1" class="hidden">
+{% highlight python %}
+while (t<10):
+  rate(500)
+  # Venymä - nollataso (7.5, 0 , 0)
+  x = paino.pos.y - tasapainoasema
+  # Jousivoima
+  F = -k * x 
+  
+  # -kx = ma
+  # a = -kx / m -> a = F/m
+  paino.nopeus = paino.nopeus + F/paino.m*dt 
+  
+  paino.pos = paino.pos + vector(0,paino.nopeus,0)*dt
+  jousi.axis =  -(jousi.pos-paino.pos)
+  fx1.plot(t,paino.pos.y)
+  fx2.plot(t,paino.nopeus)	
+
+  t = t + dt
+{% endhighlight %}
+
+</div>
+<li>Mikä värähdysliikkeen amplitudi? Miten näet sen paikan-kuvaajasta?</li>
+<li>Määritä paikan kuvaajasta värähdysliikkeen jaksonaika (\(T\)).</li>
+<li>Tee ennuste, miten jousivakio ja kappaleen massa vaikuttavat jaksonaikaan. (Tutki asiaa eri massoilla ja jousivakioilla.</li>
+<li> Tutki nopeuden ja paikan kuvaajaa. Milloin nopeus on suurin/pienin? Milloin nopeus on nolla? Pystytkö keksimään selityksen näille havainnoille?</li>
+</ol>
+
 <iframe src="https://trinket.io/embed/glowscript/8d0a346b14?toggleCode=true" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p>Harmonisessa liikkeessä olevan, kevyen jousen päässä värähtelevän kappaleen jaksonaika lasketaan \(T=2\pi\sqrt{\frac{m}{k}}\). Tulosta ohjelman lopussa jaksonajan teoreettinen arvo 
+{% highlight python %}
+
+print("jaksonaika: ")
+print(2*pi*sqrt(paino.m/k))
+
+{% endhighlight %}
+ja tutki arvon paikkansa pitävyyttä kuvaajien avulla.
+</p>
